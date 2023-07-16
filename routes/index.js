@@ -1,8 +1,13 @@
-import userRouter from './users';
+const userRouter = require('./users.js');
+const gameRouter = require('./games.js');
+const uploadRouter = require('./uploads.js');
+const libraryRouter = require('./libraries.js');
 
 const router = (app) => {
     app.use('/users', userRouter);
-}
-export default router;
+    app.use('/games', gameRouter);
+    app.use('/uploads', uploadRouter);
+    app.use('/libraries', libraryRouter);
+};
 
-
+module.exports = router;
